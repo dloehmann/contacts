@@ -13,14 +13,14 @@ env:
     - BUILD_ID=$(git rev-parse HEAD)
     - CLOUDSDK_CORE_DISABLE_PROMPTS=1
 before_install:
-  -  openssl aes-256-cbc -K $encrypted_e91dc65c53ef_key -iv $encrypted_e91dc65c53ef_iv -in service-account.json.enc -out service-account.json -d
+  - openssl aes-256-cbc -K $encrypted_e91dc65c53ef_key -iv $encrypted_e91dc65c53ef_iv -in service-account.json.enc -out service-account.json -d
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
   - gcloud auth activate-service-account --key-file service-account.json
   - gcloud config set project t-computer-271414
   - gcloud config set compute/zone us-central1-a
-  - gcloud container clusters get-credentials t-computer-271414
+  - gcloud container clusters get-credentials contacts-k8s
   
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   
