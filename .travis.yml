@@ -20,7 +20,7 @@ before_install:
   - gcloud auth activate-service-account --key-file service-account.json
   - gcloud config set project t-computer-271414
   - gcloud config set compute/zone us-central1-a
-  - gcloud container clusters get-credentials cluster-1
+  - gcloud container clusters get-credentials t-computer-271414
   
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   
