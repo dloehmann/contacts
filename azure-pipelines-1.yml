@@ -26,5 +26,5 @@ steps:
     arguments: '-f ./contacts-deployment/k8s'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Container Registry'
-    dockerRegistryEndpoint: 'Docker-deloehmann'
+    dockerRegistryEndpoint: 'Docker-dloehmann'
     secretName: 'docker-secret'
